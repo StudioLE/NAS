@@ -1,0 +1,109 @@
+@import "../bower_components/bootstrap/less/mixins.less";
+@import "../bower_components/bootstrap/less/variables.less";
+
+@navy: #2b313b;
+@bone: #f2f2f2;
+
+@link: fade(@bone, 25%);
+@link_hover: fade(@bone, 50%);
+@link_active: fade(@bone, 75%);
+
+/*****************************************************************
+*
+* Style defaults
+*
+******************************************************************/
+
+body {
+  // background: @navy;
+  // color: @bone;
+  // font-size: 18px;
+}
+
+::selection {
+  background: rgba(227, 80, 80, 0.5);
+  color: #fff;
+}
+
+a {
+  // color: @link;
+}
+
+a:hover {
+  // color: @link_hover;
+}
+
+h1, h2, h3, h4, h5 {
+  // margin: 10px 0;
+  // font-weight: normal;
+}
+
+
+/*****************************************************************
+*
+* Angular
+*
+******************************************************************/
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+
+/*****************************************************************
+*
+* Head
+*
+******************************************************************/
+
+.head {
+  height: 400px;
+  background-image: url(img/Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+nav {
+  margin-top: -100px;
+}
+
+.navbar {
+  background: none;
+  border: none;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: auto;
+
+  img {
+    height: 100px;
+  }
+}
+
+/*****************************************************************
+*
+* Foot
+*
+******************************************************************/
+
+.foot {
+  margin-top: 100px;
+  background: #000;
+
+  .title a {
+    color: @bone;
+  }
+
+  .author {
+    position: relative;
+    top: -26px;
+    left: 92px;
+
+  }
+
+}

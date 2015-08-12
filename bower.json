@@ -1,0 +1,17 @@
+{
+  "name": "nas",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Nortumbria Architecture Society Frontend",
+  "homepage": "https://github.com/StudioLE/NAS",
+  "license": false,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "less": "~2.5.1"
+  }
+}

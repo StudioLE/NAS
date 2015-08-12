@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ title }} | Northumbria Architecture Society</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet/less" href="css/style.less">
+<script src="bower_components/less/dist/less.min.js" data-async="true" data-log-level="0"></script>
+</head>
+<body class="tk-minion-pro">
+
+<div class="head" style="background-image: url(img/Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg)">
+</div> <!-- .head -->
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/"><img src="img/logos/logo-cropped-white.png" alt="Northumbria Architecture Society Logo" class="img-responsive"></a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-app="navList" ng-controller="navCtrl" ng-include="navView()">
+    </div><!-- .navbar-collapse -->
+  </div><!-- .container-fluid -->
+</nav>
+
+<ng-view></ng-view>
+
+<div class="foot">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <a href="#/"><img src="img/logos/logo-white.png" alt="Northumbria Architecture Society Logo" class="img-responsive"></a>
+      </div>
+      <div class="col-sm-8">
+        <a href="#/">Northumbria Architecture Society</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="config.js"></script>
+<script src="controllers/dashboard.js"></script>
+<script src="controllers/nav.js"></script>
+<script src="controllers/pages.js"></script>
+</body>
+</html>

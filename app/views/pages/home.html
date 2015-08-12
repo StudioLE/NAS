@@ -1,0 +1,39 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2>about</h2>
+
+      <p>The Architecture Society at Northumbria University is a chance for students with an interest in architecture , art, design and the built environment to meet up and share that interest.</p>
+
+      <p>The Architecture Society has previously organised a trip to the major Le Corbusier exhibition in the crypt of Liverpool Cathedral and Pawson exhibition at the Design Museum in London. It also hopes to be able to invite interesting, up-and-coming architects and designers to talk about their work.</p>
+
+      <p>The society also organises social events and, of course, the ‘must attend’ after-show party following the annual degree show opening night.</p>
+
+      <p>Join the society by paying £3 at the reception desk within the Northumbria University Students Union.</p>
+    </div> <!-- .col -->
+    <div class="col-sm-6">
+      
+      <h2>events</h2>
+
+      <div class="row">
+        <div ng-repeat="thumb in events()" class="col-sm-6">
+          <a href="#" class="thumbnail">
+            <img ng-src="img/{{ thumb.src }}" alt="{{ thumb.title }}">
+          </a>
+        </div>
+      </div> <!-- .row -->
+    </div> <!-- .col -->
+    <div class="col-sm-3">
+      
+      <h2>portfolios</h2>
+      
+      <a ng-repeat="thumb in portfolios()" href="#" class="thumbnail">
+        <img ng-src="img/{{ thumb.src }}" alt="{{ thumb.title }}">
+      </a>
+
+      
+    </div> <!-- .col -->
+  </div> <!-- .row -->
+</div> <!-- .container -->
