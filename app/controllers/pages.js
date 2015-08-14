@@ -7,10 +7,6 @@ angular.module('app.pages', ['ngRoute'])
     templateUrl: 'views/pages/home.html',
     controller: 'PageCtrl'
   });
-  $routeProvider.when('/blog', {
-    templateUrl: 'views/pages/blog.html',
-    controller: 'PageCtrl'
-  });
   $routeProvider.when('/events/:id', {
     templateUrl: 'views/pages/event.html',
     controller: 'EventCtrl'
@@ -19,8 +15,8 @@ angular.module('app.pages', ['ngRoute'])
     templateUrl: 'views/pages/events.html',
     controller: 'PageCtrl'
   });
-  $routeProvider.when('/portfolios', {
-    templateUrl: 'views/pages/portfolios.html',
+  $routeProvider.when('/projects', {
+    templateUrl: 'views/pages/projects.html',
     controller: 'PageCtrl'
   });
   $routeProvider.when('/contact', {
@@ -37,32 +33,14 @@ angular.module('app.pages', ['ngRoute'])
   });
 }])
 
-.controller('PageCtrl', function($scope, Page, Post) {
+.controller('PageCtrl', function($scope, Page, Post, Project) {
 
   var posts = Post.query()
+  var projects = []
 
-  var portfolios = [
-    {
-      title: 'Adam Khan Architects',
-      date: '2015-02-12',
-      src: 'Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg'
-    },
-    {
-      title: 'Ryder Architects',
-      date: '2014-10-22',
-      src: 'Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg'
-    },
-    {
-      title: 'Peter Gaze Pace Architects',
-      date: '2015-01-28',
-      src: 'Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg'
-    },
-    {
-      title: 'ArcSoc Blackwells Discounts',
-      date: '2014-10-22',
-      src: 'Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg'
-    }
-  ]
+  Project.query(function(res) {
+    projects = res.projects
+  })
   
   $scope.posts = function() {
     return posts
@@ -75,8 +53,8 @@ angular.module('app.pages', ['ngRoute'])
     return false
   }
   
-  $scope.portfolios = function() {
-    return portfolios
+  $scope.projects = function() {
+    return projects
   }
 
 })

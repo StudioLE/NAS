@@ -8,8 +8,11 @@ angular.module('app.config', [])
 *
 ******************************************************************/
 .constant('Config', {
-  api_url: 'http://wp.nas.xysti.net/wp-json/wp/v2',
-  api: function(req) {
-    return this.api_url + req
+  apis: {
+    wp: 'http://wp.nas.xysti.net/wp-json/wp/v2',
+    projects: 'http://wp.nas.xysti.net/projects-api.php'
+  },
+  endpoint: function(api, path) {
+    return this.apis[api] + path
   }
 })

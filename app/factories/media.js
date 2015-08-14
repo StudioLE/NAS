@@ -8,7 +8,7 @@ angular.module('app.mediaFactory', [])
 *
 ******************************************************************/
 .factory('Media', function($resource, Config) {
-  return $resource(Config.api('/media/:id'), {}, {
+  return $resource(Config.endpoint('wp', '/media/:id'), {}, {
     get: { method: 'GET', isArray: true }
   })
 })

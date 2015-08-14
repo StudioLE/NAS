@@ -8,7 +8,7 @@ angular.module('app.pageFactory', [])
 *
 ******************************************************************/
 .factory('Page', function($resource, Config) {
-  return $resource(Config.api('/pages/:id'), {}, {
+  return $resource(Config.endpoint('wp', '/pages/:id'), {}, {
     get: { method: 'GET', isArray: true }
   })
 })

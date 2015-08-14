@@ -11,11 +11,11 @@ angular.module('app', [
   'ngRoute',
   'navList',
   'app.config',
-  'app.dashboard',
   'app.pages',
   'app.mediaFactory',
   'app.pageFactory',
-  'app.postFactory'
+  'app.postFactory',
+  'app.projectFactory'
 ])
 
 /*****************************************************************

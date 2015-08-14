@@ -8,7 +8,7 @@ angular.module('app.postFactory', [])
 *
 ******************************************************************/
 .factory('Post', function($resource, Config) {
-  return $resource(Config.api('/posts?filter[name]=:id'), {}, {
+  return $resource(Config.endpoint('wp', '/posts?filter[name]=:id'), {}, {
     get: { method: 'GET', isArray: true }
   })
 })

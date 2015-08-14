@@ -6,14 +6,11 @@ angular.module('navList', [])
   };
 
   $scope.nav = [{
-    url: '#/blog',
-    title: 'Blog'
-  },{
     url: '#/events',
     title: 'Events'
   },{
-    url: '#/portfolios',
-    title: 'Portfolios'
+    url: '#/projects',
+    title: 'Projects'
   }, {
     url: '#/about',
     title: 'About'

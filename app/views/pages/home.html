@@ -24,10 +24,10 @@
     </div> <!-- .col -->
     <div class="col-sm-3">
       
-      <h2>portfolios</h2>
+      <h2>student projects</h2>
       
-      <a ng-repeat="thumb in portfolios()" href="#" class="thumbnail">
-        <img ng-src="img/{{ thumb.src }}" alt="{{ thumb.title }}">
+      <a ng-repeat="project in projects()" href="#" class="thumbnail">
+        <img ng-src="{{ project.covers[404] }}" alt="{{ project.name }}">
       </a>
 
       
