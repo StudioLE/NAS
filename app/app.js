@@ -6,11 +6,16 @@
 *
 ******************************************************************/
 angular.module('app', [
+  'ngSanitize',
+  'ngResource',
   'ngRoute',
   'navList',
   'app.config',
   'app.dashboard',
-  'app.pages'
+  'app.pages',
+  'app.mediaFactory',
+  'app.pageFactory',
+  'app.postFactory'
 ])
 
 /*****************************************************************

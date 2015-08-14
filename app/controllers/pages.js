@@ -11,6 +11,10 @@ angular.module('app.pages', ['ngRoute'])
     templateUrl: 'views/pages/blog.html',
     controller: 'PageCtrl'
   });
+  $routeProvider.when('/events/:id', {
+    templateUrl: 'views/pages/event.html',
+    controller: 'EventCtrl'
+  });
   $routeProvider.when('/events', {
     templateUrl: 'views/pages/events.html',
     controller: 'PageCtrl'
@@ -33,30 +37,9 @@ angular.module('app.pages', ['ngRoute'])
   });
 }])
 
-.controller('PageCtrl', function($scope) {
+.controller('PageCtrl', function($scope, Page, Post) {
 
-  var events = [
-    {
-      title: 'Adam Khan Architects',
-      date: '2015-02-12',
-      src: '10983316_602085633258065_945888742273676366_o.jpg'
-    },
-    {
-      title: 'Ryder Architects',
-      date: '2014-10-22',
-      src: '10506752_542202572579705_2896804019507899036_o.jpg'
-    },
-    {
-      title: 'Peter Gaze Pace Architects',
-      date: '2015-01-28',
-      src: '10903951_591659480967347_45747217307958360_o.jpg'
-    },
-    {
-      title: 'ArcSoc Blackwells Discounts',
-      date: '2014-10-22',
-      src: '1052917_367250010074963_1580767482_o.jpg'
-    }
-  ]
+  var posts = Post.query()
 
   var portfolios = [
     {
@@ -81,17 +64,35 @@ angular.module('app.pages', ['ngRoute'])
     }
   ]
   
-  $scope.events = function() {
-    // return User.get()
-    return events
+  $scope.posts = function() {
+    return posts
+  }
+
+  $scope.image = function(image) {
+    if(image && image[0]) {
+      return image[0]
+    }
+    return false
   }
   
   $scope.portfolios = function() {
-    // return User.get()
     return portfolios
   }
 
+})
 
-  
+.controller('EventCtrl', function($scope, $routeParams, Post) {
 
-});
+  var post = Post.get($routeParams, function() {
+    console.log(post)
+    $scope.post = post[0]
+  })
+
+  $scope.image = function(image) {
+    if(image && image[0]) {
+      return image[0]
+    }
+    return false
+  }
+
+})

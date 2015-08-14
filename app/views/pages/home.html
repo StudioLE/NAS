@@ -18,11 +18,8 @@
       <h2>events</h2>
 
       <div class="row">
-        <div ng-repeat="thumb in events()" class="col-sm-6">
-          <a href="#" class="thumbnail">
-            <img ng-src="img/{{ thumb.src }}" alt="{{ thumb.title }}">
-          </a>
-        </div>
+        <div ng-repeat="post in posts()" class="col-sm-6" ng-include="'views/partials/event.html'">
+        </div> <!-- .col -->
       </div> <!-- .row -->
     </div> <!-- .col -->
     <div class="col-sm-3">

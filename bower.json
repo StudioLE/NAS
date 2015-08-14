@@ -12,6 +12,8 @@
     "angular-mocks": "~1.4.0",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",
-    "less": "~2.5.1"
+    "less": "~2.5.1",
+    "angular-resource": "~1.4.4",
+    "angular-sanitize": "~1.4.4"
   }
 }

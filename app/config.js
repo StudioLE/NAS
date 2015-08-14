@@ -8,8 +8,8 @@ angular.module('app.config', [])
 *
 ******************************************************************/
 .constant('Config', {
-  app_url: 'https://app.studiole.uk',
-  app: function(req) {
-    return this.app_url + req
+  api_url: 'http://wp.nas.xysti.net/wp-json/wp/v2',
+  api: function(req) {
+    return this.api_url + req
   }
 })
