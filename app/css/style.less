@@ -3,10 +3,11 @@
 
 @navy: #2b313b;
 @bone: #f2f2f2;
+@colour: #f68400;
 
-@link: fade(@bone, 25%);
-@link_hover: fade(@bone, 50%);
-@link_active: fade(@bone, 75%);
+@link: @colour;
+@link_hover: darken(@colour, 20%);
+@link_active: darken(@colour, 10%);
 
 /*****************************************************************
 *
@@ -26,16 +27,24 @@ body {
 }
 
 a {
-  // color: @link;
+  color: @colour;
 }
 
 a:hover {
-  // color: @link_hover;
+  color: @link_hover;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5 {
   // margin: 10px 0;
   // font-weight: normal;
+}
+
+h2 {
+  padding-bottom: 3px;
+  // color: @colour;
+  border-bottom: 1px solid #E8E8E8;
+  font-size: 12px;
 }
 
 
@@ -60,7 +69,7 @@ h1, h2, h3, h4, h5 {
 
 .head {
   height: 400px;
-  background-image: url(img/Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg);
+  background-image: url(../img/Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -85,6 +94,39 @@ nav {
   }
 }
 
+.navbar-nav>li>a {
+  padding: 60px 15px 20px 35px;
+  color: @colour;
+  font-size: 18px;
+
+  &:hover, &:focus, &:hover {
+    color: #fff;
+    background: none;
+  }
+}
+
+.navbar-nav>li.active>a {
+  color: #fff;
+}
+
+
+
+/*****************************************************************
+*
+* Main
+*
+******************************************************************/
+
+.thumbnail {
+  border: 1px solid #fff;
+}
+
+a.thumbnail {
+  &:hover {
+    border-color: @colour;
+  }
+}
+
 /*****************************************************************
 *
 * Foot
@@ -93,16 +135,25 @@ nav {
 
 .foot {
   margin-top: 100px;
-  background: #000;
+  padding: 50px;
+  background: @navy;
+  // background-image: url(../img/Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg);
+  // background-position: center;
+  // background-size: cover;
 
-  .title a {
-    color: @bone;
+  h2, h3 {
+    margin: 7px 0 8px;
+    color: fade(#fff, 50%);
+    border-color: fade(#fff, 50%);
   }
 
-  .author {
-    position: relative;
-    top: -26px;
-    left: 92px;
+  p {
+    font-size: 30px;
+    opacity: 0.5;
+    margin-top: -5px;
+  }
+
+  a {
 
   }
 

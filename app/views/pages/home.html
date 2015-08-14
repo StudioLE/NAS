@@ -1,9 +1,8 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <h2>about</h2>
+
+      <h2><a href="#/about">about</a></h2>
 
       <p>The Architecture Society at Northumbria University is a chance for students with an interest in architecture , art, design and the built environment to meet up and share that interest.</p>
 
@@ -14,8 +13,8 @@
       <p>Join the society by paying £3 at the reception desk within the Northumbria University Students Union.</p>
     </div> <!-- .col -->
     <div class="col-sm-6">
-      
-      <h2>events</h2>
+
+      <h2><a href="#/events">events</a></h2>
 
       <div class="row">
         <div ng-repeat="post in posts()" class="col-sm-6" ng-include="'views/partials/event.html'">
@@ -23,14 +22,12 @@
       </div> <!-- .row -->
     </div> <!-- .col -->
     <div class="col-sm-3">
-      
-      <h2>student projects</h2>
-      
+
+      <h2><a href="#/projects">student projects</a></h2>
+
       <a ng-repeat="project in projects()" href="#" class="thumbnail">
         <img ng-src="{{ project.covers[404] }}" alt="{{ project.name }}">
       </a>
-
-      
     </div> <!-- .col -->
   </div> <!-- .row -->
 </div> <!-- .container -->
