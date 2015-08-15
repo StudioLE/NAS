@@ -25,8 +25,10 @@
 
       <h2><a href="#/projects">student projects</a></h2>
 
-      <a ng-repeat="project in projects()" href="#" class="thumbnail" rel="lightbox">
-        <img ng-src="{{ project.covers[404] }}" alt="{{ project.name }}">
+      <a ng-repeat="project in projects()" href="#" class="poster landscape" rel="lightbox">
+        <div>
+          <img ng-src="{{ project.covers[404] }}" alt="{{ project.name }}">
+        </div>
       </a>
     </div> <!-- .col -->
   </div> <!-- .row -->

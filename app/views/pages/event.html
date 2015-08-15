@@ -1,11 +1,10 @@
 <div class="container">
   <div class="row intro">
+    <div class="col-sm-6" ng-include="'views/partials/event.html'">
+    </div> <!-- .col -->
     <div class="col-sm-6">
       <h2 ng-bind-html="post.title.rendered"></h2>
       <div ng-bind-html="post.content.rendered"></div>
-    </div> <!-- .col -->
-    <div class="col-sm-6" ng-include="'views/partials/event.html'">
-      </a>
     </div> <!-- .col -->
   </div> <!-- .row -->
 </div> <!-- .container -->

@@ -1,13 +1,58 @@
 @import "../bower_components/bootstrap/less/mixins.less";
 @import "../bower_components/bootstrap/less/variables.less";
 
-@navy: #2b313b;
-@bone: #f2f2f2;
-@colour: #f68400;
+@navy: #111F22; // #2b313b;
+@orange: #f68400;
+@blue: #608A9B;
+@darker_blue: darken(@blue, 20%);
 
-@link: @colour;
-@link_hover: darken(@colour, 20%);
-@link_active: darken(@colour, 10%);
+@link: @darker_blue;
+@link_hover: @orange;
+@link_active: @link_hover;
+
+@nav: fade(#fff, 70%);
+@nav_hover: @orange;
+@nav_active: #fff;
+
+@border: 1px solid @darker_blue;
+
+// @link_hover: darken(@orange, 20%);
+// @link_active: darken(@orange, 10%);
+
+// https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+.aspect_ratio(@width, @height, @padding) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (@height / @width) * 100%;
+  }
+
+  > div {
+    position: absolute;
+    overflow: hidden;
+    top: @padding;
+    left: @padding;
+    right: @padding;
+    bottom: @padding;
+
+    > img {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    p {
+      margin: 40px 10px 0 10px;
+      font-size: 50px;
+    }
+  }
+}
 
 /*****************************************************************
 *
@@ -16,9 +61,10 @@
 ******************************************************************/
 
 body {
-  // background: @navy;
-  // color: @bone;
-  // font-size: 18px;
+  background: @navy;
+  color: @blue;
+  font-size: 18px;
+  font-family: "news-gothic-std",sans-serif;
 }
 
 ::selection {
@@ -27,7 +73,7 @@ body {
 }
 
 a {
-  color: @colour;
+  color: @link;
 }
 
 a:hover {
@@ -36,15 +82,20 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5 {
-  // margin: 10px 0;
-  // font-weight: normal;
+  border-bottom: @border;
+  // font-family: "brandon-grotesque",sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 h2 {
   padding-bottom: 3px;
-  // color: @colour;
-  border-bottom: 1px solid #E8E8E8;
   font-size: 12px;
+  letter-spacing: 1px;
+}
+
+p {
+  // color: @blue;
 }
 
 
@@ -80,6 +131,7 @@ nav {
 }
 
 .navbar {
+  margin-bottom: 30px;
   background: none;
   border: none;
 }
@@ -88,6 +140,11 @@ nav {
   padding-top: 0;
   padding-bottom: 0;
   height: auto;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 0.9;
+  }
 
   img {
     height: 100px;
@@ -96,17 +153,22 @@ nav {
 
 .navbar-nav>li>a {
   padding: 60px 15px 20px 35px;
-  color: @colour;
+  color: @nav;
+  // font-family: "brandon-grotesque",sans-serif;
   font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0px 1px 7px @navy;
+  text-transform: uppercase;
 
   &:hover, &:focus, &:hover {
-    color: #fff;
     background: none;
+    color: @nav_hover;
   }
 }
 
 .navbar-nav>li.active>a {
-  color: #fff;
+  color: @nav_active;
 }
 
 
@@ -117,14 +179,40 @@ nav {
 *
 ******************************************************************/
 
+
 .thumbnail {
-  border: 1px solid #fff;
+  background: none;
+  border: @border;
+  border-radius: 3px;
+
+  &:hover {
+    border-color: @orange !important;
+  }
 }
 
-a.thumbnail {
-  &:hover {
-    border-color: @colour;
+.poster {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+
+  .thumbnail;
+
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+
+  .aspect_ratio(210, 297, 4px);
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
+}
+
+.poster.landscape {
+  .aspect_ratio(297, 210, 4px);
 }
 
 /*****************************************************************
@@ -134,27 +222,16 @@ a.thumbnail {
 ******************************************************************/
 
 .foot {
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 50px;
-  background: @navy;
-  // background-image: url(../img/Arch2o-Synthesis-Design-+-Architecture-SDA-51.jpg);
-  // background-position: center;
-  // background-size: cover;
 
   h2, h3 {
     margin: 7px 0 8px;
-    color: fade(#fff, 50%);
-    border-color: fade(#fff, 50%);
   }
 
   p {
     font-size: 30px;
-    opacity: 0.5;
     margin-top: -5px;
-  }
-
-  a {
-
   }
 
 }

@@ -1,4 +1,9 @@
-<a href="#/events/{{ post.slug }}" class="thumbnail">
-  <img ng-if="image(post.thumb)" ng-src="{{ image(post.thumb) }}" alt="{{ post.title.rendered }}">
-  <div ng-if=" ! image(post.thumb)" ng-bind-html="post.title.rendered"></div>
+<a href="#/events/{{ post.slug }}" class="poster">
+  <div ng-if="image(post.thumb)">
+    <img ng-src="{{ image(post.thumb) }}" alt="{{ post.title.rendered }}">
+  </div>
+  <div ng-if=" ! image(post.thumb)">
+    <p><img src="img/logos/logo-black.png" alt="Northumbria Architecture Society Logo" class="img-responsive"></p>
+    <p ng-bind-html="post.title.rendered"></p>
+  </div>
 </a>
