@@ -105,10 +105,23 @@ p {
 *
 ******************************************************************/
 
-[ng-click],
-[data-ng-click],
-[x-ng-click] {
+[ng-click], [data-ng-click], [x-ng-click] {
     cursor: pointer;
+}
+
+.appear.ng-enter {
+  transition: 1s linear all;
+  opacity: 0;
+}
+
+.appear.ng-enter-stagger {
+  transition-delay: 0.5s;
+  // animation-delay: 0.3s;
+  transition-duration: 0s;
+}
+
+.appear.ng-enter.ng-enter-active {
+  opacity: 1;
 }
 
 

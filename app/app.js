@@ -9,6 +9,7 @@ angular.module('app', [
   'ngSanitize',
   'ngResource',
   'ngRoute',
+  'ngAnimate',
   'angulartics',
   'angulartics.google.analytics',
   'app.meta',
