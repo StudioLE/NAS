@@ -3,10 +3,10 @@
 <!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
-<head>
+<head ng-controller="HeadCtrl">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>{{ title }} | Northumbria Architecture Society</title>
+<title>{{ title }}</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -34,7 +34,11 @@
       <a class="navbar-brand" href="#/"><img src="img/logos/logo-cropped-white.png" alt="Northumbria Architecture Society Logo" class="img-responsive"></a>
     </div>
     
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-app="navList" ng-controller="navCtrl" ng-include="navView()">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="NavCtrl">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-repeat="link in nav" ng-class="navClass(link.url)"><a href="{{link.url}}">{{link.title}}</a></li>
+      </ul>
+
     </div><!-- .navbar-collapse -->
   </div><!-- .container-fluid -->
 </nav>
@@ -78,8 +82,9 @@
 <script src="bower_components/lodash/lodash.min.js"></script>
 <script src="app.js"></script>
 <script src="config.js"></script>
-<script src="controllers/nav.js"></script>
+<script src="controllers/meta.js"></script>
 <script src="controllers/pages.js"></script>
+<script src="factories/meta.js"></script>
 <script src="factories/media.js"></script>
 <script src="factories/page.js"></script>
 <script src="factories/post.js"></script>
