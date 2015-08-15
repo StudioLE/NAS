@@ -8,7 +8,12 @@ angular.module('app.postFactory', [])
 *
 ******************************************************************/
 .factory('Post', function($resource, Config) {
-  return $resource(Config.endpoint('wp', '/posts?filter[name]=:id'), {}, {
-    get: { method: 'GET', isArray: true }
+  return $resource(Config.endpoint('wp', '/posts?filter[name]=:id&filter[posts_per_page]=:limit'), {
+    limit: 9
+  }, {
+    get: {
+      method: 'GET',
+      isArray: true
+    }
   })
 })
