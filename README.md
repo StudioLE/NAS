@@ -21,20 +21,21 @@ npm start
 
 UI
 - [x] Basic layout
-- [ ] Main nav
-- [ ] Top nav
+- [x] Main nav
+- [ ] Loading indicator
+- [ ] Dynamic header
 
 Footer
-- [ ] Social links
+- [x] Social links
 
 Events
-- [ ] Wordpress backend
+- [x] Wordpress backend
+- [ ] Wordpress API
 
 Blog / feed
 - [ ] Tumblr API
 
-Portfolios
-- [ ] Behance API
-- [ ] Member signup
-- [ ] Member login
-- [ ] Member profile
+Projects
+- [x] Behance API
+- [ ] Instructions to add portfolio
+- [ ] Overlay project name + author
