@@ -33,7 +33,7 @@ angular.module('app.pages', ['ngRoute'])
   });
 }])
 
-.controller('PageCtrl', function($scope, Page, Post, Project) {
+.controller('PageCtrl', function($scope, $timeout, Page, Post, Project) {
 
   var posts = Post.query()
   var projects = []
@@ -57,12 +57,40 @@ angular.module('app.pages', ['ngRoute'])
     return projects
   }
 
+  $scope.$watch('projects', function(newValue, oldValue) {
+    $timeout(function() {
+      $('.projects').magnificPopup({
+        delegate: 'a[rel~="lightbox"]',
+        // verticalGap: 150,
+        // items:
+        type:'image',
+        gallery: {
+          // options for gallery
+          enabled: true,
+          arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>'
+        },
+        callbacks: {
+          open: function() {
+            // Get instance (after popup was opened)
+            var mfp = $.magnificPopup.instance
+
+            // Modify the items array
+            mfp.items = _.filter(projects[mfp.index].modules, 'type', 'image')
+
+            // Call update method to refresh counters (if required)
+            mfp.updateItemHTML()
+          }
+        }
+      })
+    })
+
+  })
+
 })
 
 .controller('EventCtrl', function($scope, $routeParams, Post) {
 
   var post = Post.get($routeParams, function() {
-    console.log(post)
     $scope.post = post[0]
   })
 

@@ -9,6 +9,8 @@ angular.module('app', [
   'ngSanitize',
   'ngResource',
   'ngRoute',
+  'angulartics',
+  'angulartics.google.analytics',
   'navList',
   'app.config',
   'app.pages',
