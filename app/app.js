@@ -15,6 +15,7 @@ angular.module('app', [
   'app.meta',
   'app.config',
   'app.pages',
+  'app.utilFactory',
   'app.metaFactory',
   'app.mediaFactory',
   'app.pageFactory',

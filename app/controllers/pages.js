@@ -37,7 +37,7 @@ angular.module('app.pages', ['ngRoute'])
 
 })
 
-.controller('HomeCtrl', function($scope, $timeout, Page, Post, Project) {
+.controller('HomeCtrl', function($scope, $timeout, Page, Post, Project, Util) {
 
   var posts = Post.query({
     limit: 5
@@ -63,34 +63,8 @@ angular.module('app.pages', ['ngRoute'])
   $scope.projects = function() {
     return projects
   }
-
-  $scope.$watch('projects', function(newValue, oldValue) {
-    $timeout(function() {
-      $('.projects').magnificPopup({
-        delegate: 'a[rel~="lightbox"]',
-        // verticalGap: 150,
-        // items:
-        type:'image',
-        gallery: {
-          // options for gallery
-          enabled: true,
-          arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>'
-        },
-        callbacks: {
-          open: function() {
-            // Get instance (after popup was opened)
-            var mfp = $.magnificPopup.instance
-
-            // Modify the items array
-            mfp.items = _.filter(projects[mfp.index].modules, 'type', 'image')
-
-            // Call update method to refresh counters (if required)
-            mfp.updateItemHTML()
-          }
-        }
-      })
-    })
-  })
+  
+  $scope.lightbox = Util.lightbox
 
 })
 
@@ -128,7 +102,7 @@ angular.module('app.pages', ['ngRoute'])
 
 })
 
-.controller('ProjectsCtrl', function($scope, $timeout, Project) {
+.controller('ProjectsCtrl', function($scope, $timeout, Project, Util) {
 
   var projects = []
 
@@ -139,34 +113,8 @@ angular.module('app.pages', ['ngRoute'])
   $scope.projects = function() {
     return projects
   }
-
-  $scope.$watch('projects', function(newValue, oldValue) {
-    $timeout(function() {
-      $('.projects').magnificPopup({
-        delegate: 'a[rel~="lightbox"]',
-        // verticalGap: 150,
-        // items:
-        type:'image',
-        gallery: {
-          // options for gallery
-          enabled: true,
-          arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>'
-        },
-        callbacks: {
-          open: function() {
-            // Get instance (after popup was opened)
-            var mfp = $.magnificPopup.instance
-
-            // Modify the items array
-            mfp.items = _.filter(projects[mfp.index].modules, 'type', 'image')
-
-            // Call update method to refresh counters (if required)
-            mfp.updateItemHTML()
-          }
-        }
-      })
-    })
-  })
+  
+  $scope.lightbox = Util.lightbox
 
 })
 

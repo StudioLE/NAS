@@ -24,10 +24,10 @@
   </div> <!-- .row -->
 
   <h2><a href="#/projects">student projects</a></h2>
+
   <div class="row">
-  
     <div ng-repeat="project in projects()" class="col-sm-3 projects appear">
-      <a href="#" class="poster landscape" rel="lightbox">
+      <a class="poster landscape" ng-click="lightbox(project.modules)">
         <div>
           <img ng-src="{{ project.covers[404] }}" alt="{{ project.name }}">
         </div>
